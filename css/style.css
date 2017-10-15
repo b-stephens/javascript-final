@@ -3,6 +3,7 @@
 
 
 body {
+    padding: 15px;
     font-family: 'Playfair Display SC', serif;
 }
 
@@ -14,9 +15,13 @@ form {
     margin: 50px auto;
 }
 
-#input-field {
+#inputField {
     font-family: 'Coming Soon', cursive;
     font-size: 20px;
+}
+
+#main h3 {
+    text-align: center;
 }
 
 li:first-child {
