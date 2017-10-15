@@ -3,22 +3,32 @@ var $ = function(id) {
     return document.getElementById(id);
 }
 
-var head= $('header').classList.add('text-center');
-var list = document.createElement('ul');
-var toDo = $('col-1').appendChild(list).textContent = 'To Do';
-var button= $('addToList');
+var head = $('header').classList.add('text-center');
+var list = document.createElement('ol');
+var list2 = document.createElement('ol');
+list.setAttribute('style', 'font-size: 30px; color: #4164bf; margin-left: 100px; text-decoration: underline;');
+list2.setAttribute('style', 'font-size: 30px; color: #4164bf; margin-left: 100px; text-decoration: underline;');
+var toDo = $('col-1').appendChild(list).textContent ='To Do';
+var done = $('col-2').appendChild(list2).textContent ='Done';
+var button = $('addToList');
+
+var completed = document.createElement('button');
+completed.style.float = 'right';
+completed.innerHTML = 'Completed';
+completed.classList.add('btn-md', 'btn-success');
 
 let toDoList = [];
 
 
 button.addEventListener('click', function() {
-    var input = $('input-field').value;
-    //alert (input);
-    var toDoLi = document.createElement('li');
+    let input = $('input-field').value;
+    let toDoLi = document.createElement('li');
     toDoLi.innerHTML = input;
     list.appendChild(toDoLi);
+    toDoLi.appendChild(completed);
+    toDoLi.setAttribute('style', 'color: #000; font-size: 18px; text-decoration: none; margin-left: -30px; font-family: Coming Soon, cursive; font-size: 25px;');
     //toDoList.push(input);
-   // console.log(toDoList);
+    //console.log(toDoList);
 });
 
 
