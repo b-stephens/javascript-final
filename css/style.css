@@ -19,6 +19,15 @@ form {
     font-size: 20px;
 }
 
+#main h3 {
+    text-align: center;
+}
+
+li {
+    font-family: 'Coming Soon', cursive;
+    text-decoration: none !important;
+}
+
 li:first-child {
     margin-top: 50px;
 }
