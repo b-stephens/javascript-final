@@ -6,12 +6,17 @@ var $ = function(id) {
 var head = $('header').classList.add('text-center');
 var list = document.createElement('ol');
 var list2 = document.createElement('ol');
-list.setAttribute('style', 'font-size: 18px; color: #4164bf; margin-left: 100px; text-decoration: underline;');
-list2.setAttribute('style', 'font-size: 18px; color: #ed2715; margin-left: 100px; text-decoration: underline;');
+list.setAttribute('style', 'font-size: 18px; color: #4164bf; margin-left: 100px; font-family: Coming Soon, cursive');
+list2.setAttribute('style', 'font-size: 18px; color: #ed2715; margin-left: 100px; font-family: Coming Soon, cursive');
 var toDo = $('col-1').appendChild(list);
 var done = $('col-2').appendChild(list2);
 var button = $('addToList');
 
+//creates value for text box as soon as content is entered
+//  var input = $('input-field');
+//  var inputText = input.addEventListener('keyup', function(e) {
+//      $('input-field').value;
+//  })
 
 button.addEventListener('click', function clickButton() {
     let input = $('input-field').value;
