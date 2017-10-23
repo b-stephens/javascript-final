@@ -21,6 +21,25 @@ form {
 
 #main h3 {
     text-align: center;
+    overflow: hidden;
+}
+
+#to-do-list {
+    font-size: 18px;
+    color: #4164bf;
+    margin: 0 25px;
+    font-family: Coming Soon, cursive
+}
+
+#done-list {
+    font-size: 18px;
+    color: #ed2715;
+    margin: 0 25px;
+    font-family: Coming Soon, cursive
+}
+
+#clearBtn {
+    margin-top: 25px;
 }
 
 li:first-child {
