@@ -14,6 +14,8 @@ addToList.addEventListener('click', function() {
         makeList('to-do');
         document.forms[0].reset();
         console.log('to-do: ' + toDoList);
+    } else {
+        alert ('Please enter an item');
     };
 });
 
@@ -35,13 +37,14 @@ function makeList(list_type) {
             var doneBtn = document.createElement('button');
 
             listItem.innerHTML = itemsArray[i];
-
             listItem.appendChild(editBtn);
             listItem.appendChild(doneBtn);
 
             editBtn.innerText = ('Edit');
             editBtn.setAttribute('type', 'button');
+            editBtn.setAttribute('style', 'position: absolute; right: 90px; font-family: Playfair Display SC, serif;')
             editBtn.classList.add('btn', 'btn-sm', 'btn-default');
+
             editBtn.addEventListener('click', function() {
                 let newValue = prompt(itemsArray[i])
                 newValue = itemsArray[i];
@@ -49,6 +52,7 @@ function makeList(list_type) {
 
             doneBtn.innerText = ('Done');
             doneBtn.setAttribute('type', 'button');
+            doneBtn.setAttribute('style', 'position: absolute; right: 30px; font-family: Playfair Display SC, serif;');
             doneBtn.classList.add('btn', 'btn-sm', 'btn-danger');
 
             doneBtn.addEventListener('click', delayDoneList, moveToDone);

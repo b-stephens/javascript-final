@@ -1,4 +1,4 @@
-/*google font*/
+/*google fonts*/
 @import url('https://fonts.googleapis.com/css?family=Coming+Soon|Playfair+Display+SC');
 
 
@@ -19,27 +19,32 @@ form {
     font-size: 20px;
 }
 
-#main h3 {
-    text-align: center;
-    overflow: hidden;
+#main div {
+    padding: 0;
 }
 
-#to-do-list {
+#main h3 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+#to-do-list, #done-list {
+    height: 500px;
+    border: 2px solid #8e7979;
+    line-height: 2.1em;
     font-size: 18px;
     color: #4164bf;
-    margin: 0 25px;
+    margin: 0 20px;
     font-family: Coming Soon, cursive
 }
 
 #done-list {
-    font-size: 18px;
     color: #ed2715;
-    margin: 0 25px;
-    font-family: Coming Soon, cursive
 }
 
 #clearBtn {
-    margin-top: 25px;
+    margin: 25px auto;
+    color: #000;
 }
 
 li:first-child {
