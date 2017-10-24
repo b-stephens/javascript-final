@@ -45,7 +45,7 @@ function makeList(list_type) {
             editBtn.setAttribute('style', 'position: absolute; right: 90px; font-family: Playfair Display SC, serif;')
             editBtn.classList.add('btn', 'btn-sm', 'btn-default');
 
-            editBtn.addEventListener('click', function() {
+            editBtn.addEventListener('click', function() {                  /* definitely wrong */
                 let newValue = prompt(itemsArray[i])
                 newValue = itemsArray[i];
             });
@@ -66,17 +66,24 @@ function makeList(list_type) {
             var doneItems = document.createElement('li');
             doneItems.innerHTML = itemsArray[i];
             col.appendChild(doneItems);
+
             var clearDoneList = $('clearBtn');
             clearDoneList.addEventListener('click', function() {
-                col.innerHTML = '';
-                doneList = [''];
+                var deleteList = confirm ('Are you sure you want to delete this list?');
+                if (deleteList == true) {
+                    col.innerHTML = '';
+                    doneList = [''];
+                    return true;
+                } else {                    /* Have to click "ok" or "cancel" more and more to get it to work; add items, clear, add more items, clear again */
+                    return false;
+                }
             });
         };
     };
 };
 
 function moveToDone(i) {
-    doneList.push(toDoList.splice(i, 1));
+    doneList.push(toDoList.splice(i, 1));    /* moves first "to do" item to "done" list, need to get the list item with the button clicked to move*/
     makeList('to-do');
     makeList('done');
     console.log('done: ' + doneList);
