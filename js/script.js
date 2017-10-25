@@ -31,7 +31,7 @@ function makeList(list_type) {
     col.innerHTML = '';
 
     for(var i = 0; i<itemsArray.length; i++) {
-        if (change) {
+        if (change) { //Are you checking for the var change globally, or on each individual todo item?
             var listItem = document.createElement('li');
             var editBtn = document.createElement('button');
             var doneBtn = document.createElement('button');
@@ -46,8 +46,11 @@ function makeList(list_type) {
             editBtn.classList.add('btn', 'btn-sm', 'btn-default');
 
             editBtn.addEventListener('click', function() {                  /* definitely wrong */
-                let newValue = prompt(itemsArray[i])
-                newValue = itemsArray[i];
+                let newValue = prompt(itemsArray[i])/*Remember that newValue (since it's a let) will ONLY exist in the scope of this callback.
+                What you are doing here is setting the value of newValue to the response the user is going to give you when you prompt them with itemsArray[i]. 
+                But how will you access newValue outside of this callback?
+               */
+               newValue = itemsArray[i];
             });
 
             doneBtn.innerText = ('Done');
@@ -67,13 +70,13 @@ function makeList(list_type) {
             doneItems.innerHTML = itemsArray[i];
             col.appendChild(doneItems);
 
-            var clearDoneList = $('clearBtn');
+            var clearDoneList = $('clearBtn'); //WHY WHY JQUERY?!?!?!? WHYYY!!!???
             clearDoneList.addEventListener('click', function() {
                 var deleteList = confirm ('Are you sure you want to delete this list?');
                 if (deleteList == true) {
                     col.innerHTML = '';
                     doneList = [''];
-                    return true;
+                    return true; //Why are you returning true else false here? The functionality you need is accomplished from ln. 77-78
                 } else {                    /* Have to click "ok" or "cancel" more and more to get it to work; add items, clear, add more items, clear again */
                     return false;
                 }
@@ -82,7 +85,7 @@ function makeList(list_type) {
     };
 };
 
-function moveToDone(i) {
+function moveToDone(i) { //In this function, if you console.log what i is, it will be undefined. Where are you passing in the value of "i" when you call the moveToDone() function? Remember that this is where you are declaring the fn, not where you are calling it, so the arguments passed here are just placeholders. The spot where you call the function is where you pass in a legit value.
     doneList.push(toDoList.splice(i, 1));    /* moves first "to do" item to "done" list, need to get the list item with the button clicked to move*/
     makeList('to-do');
     makeList('done');
@@ -93,6 +96,8 @@ var timer
 function delayDoneList() {
     timer = setTimeout(moveToDone, 2000);
 };
+
+//OVERALL: This looks great!
 
 
 
