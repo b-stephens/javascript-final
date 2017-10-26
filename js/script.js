@@ -42,23 +42,24 @@ function makeList(list_type) {
 
             editBtn.innerText = ('Edit');
             editBtn.setAttribute('type', 'button');
-            editBtn.setAttribute('style', 'position: absolute; right: 90px; font-family: Playfair Display SC, serif;')
+            editBtn.setAttribute('style', 'position: absolute; right: 130px; font-family: Playfair Display SC, serif;')
             editBtn.classList.add('btn', 'btn-sm', 'btn-default');
-
-            editBtn.addEventListener('click', function() {                  /* definitely wrong */
-                let newValue = prompt(itemsArray[i])
-                newValue = itemsArray[i];
-            });
 
             doneBtn.innerText = ('Done');
             doneBtn.setAttribute('type', 'button');
-            doneBtn.setAttribute('style', 'position: absolute; right: 30px; font-family: Playfair Display SC, serif;');
+            doneBtn.setAttribute('style', 'position: absolute; right: 70px; font-family: Playfair Display SC, serif;');
             doneBtn.classList.add('btn', 'btn-sm', 'btn-danger');
 
             doneBtn.addEventListener('click', delayDoneList, moveToDone);
             doneBtn.addEventListener('click', function() {
                 listItem.setAttribute('style', 'text-decoration: line-through');
             });
+
+            editBtn.addEventListener('click', function() {
+                var editField = document.createElement('input');
+                editField.setAttribute('type', 'text');
+                listItem = editField;
+            })
             col.appendChild(listItem);
 
         } else {
@@ -67,17 +68,6 @@ function makeList(list_type) {
             doneItems.innerHTML = itemsArray[i];
             col.appendChild(doneItems);
 
-            var clearDoneList = $('clearBtn');
-            clearDoneList.addEventListener('click', function() {
-                var deleteList = confirm ('Are you sure you want to delete this list?');
-                if (deleteList == true) {
-                    col.innerHTML = '';
-                    doneList = [''];
-                    return true;
-                } else {                    /* Have to click "ok" or "cancel" more and more to get it to work; add items, clear, add more items, clear again */
-                    return false;
-                }
-            });
         };
     };
 };
@@ -94,6 +84,13 @@ function delayDoneList() {
     timer = setTimeout(moveToDone, 2000);
 };
 
+var clearList = function() {
+    $('done-list').innerHTML = '';
+    //doneList = '';
+    //moveToDone();
+};
+
+var clearBtn = $('clearBtn').addEventListener('click', clearList);
 
 
 

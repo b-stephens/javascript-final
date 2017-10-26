@@ -7,11 +7,11 @@ body {
 }
 
 #header h1 {
-    margin-top: 50px;
+    margin-top: 25px;
 }
 
 form {
-    margin: 50px auto;
+    margin-top: 25px;
 }
 
 #input-field {
@@ -23,20 +23,27 @@ form {
     padding: 0;
 }
 
-#main h3 {
+.clipboard-bg {
+    background-image: url('../img/clipboard2.jpg');
+    background-size: 100%;
+    background-repeat: repeat-x;
+}
+
+h3 {
     text-align: center;
-    margin-bottom: 30px;
+    margin-top: 180px;
+    text-decoration: underline;
 }
 
 #to-do-list, #done-list {
-    height: 500px;
-    border: 2px solid #8e7979;
+    height: 600px;
     line-height: 2.1em;
     font-size: 18px;
     color: #4164bf;
-    margin: 0 20px;
+    margin-left: 70px;
     font-family: Coming Soon, cursive
 }
+
 
 #done-list {
     color: #ed2715;
@@ -48,5 +55,33 @@ form {
 }
 
 li:first-child {
-    margin-top: 50px;
+    margin-top: 30px;
 }
+
+footer {
+    height: 50px;
+    background-color: #9a8ef9;
+}
+
+footer p {
+    color: #000;
+    margin: 14px 15px 0;
+}
+
+footer a {
+    color: #000;
+}
+
+footer a:hover {
+    text-decoration: none;
+    color: #142e93;
+}
+
+footer li:first-child {
+    margin-top: 0;
+}
+
+.social {
+    list-style-type: none;
+}
+

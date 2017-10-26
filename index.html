@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>To Do List</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -18,17 +19,35 @@
             </form>
     </div>
     <div class="row" id="main">
-        <div class="col-sm-6">
+        <div class="col-sm-6 clipboard-bg img-responsive">
             <h3>To Do</h3>
             <ol id="to-do-list"></ol>
         </div>
-        <div class="col-sm-6">
+        <div class="col-sm-6 clipboard-bg">
             <h3>Done</h3>
             <ol id="done-list"></ol>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6 col-sm-offset-6">
             <button class="btn btn-sm btn-basic center-block" id="clearBtn">Clear List</button>
         </div>
     </div>
-
+<footer>
+    <div class="row">
+        <div class="col-sm-6">
+            <p>&copy 2017 Built by <a href="https://bstephens.info">Bryan Stephens</a></p>
+        </div>
+        <div class="col-sm-6">
+            <ul class="social pull-right">
+                <li class="social-icon pull-left"><p><a href="https://github.com/b-stephens"><i class="fa fa-github fa-2x"></i></a></p></li>
+                <li class="social-icon pull-left"><p><a href="https://bitbucket.org/"><i class="fa fa-bitbucket fa-2x"></i></a></p></li>
+                <li class="social-icon pull-left"><p><a href="https://www.facebook.com/bryan.stephens.374"><i class="fa fa-facebook fa-2x"></i></a></p></li>
+                <li class="social-icon pull-left"><p><a href="https://twitter.com/?lang=en"><i class="fa fa-twitter fa-2x"></i></a></p></li>
+            </ul>
+        </div>
+    </div>
+</footer>
 <script src="js/script.js"></script>
 </body>
 </html>
