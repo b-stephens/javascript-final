@@ -1,6 +1,6 @@
 var $ = function(id) {
     return document.getElementById(id);
-};
+}; //nice use of modular, reusable code! -RJH
 
 var toDoList = [];
 var doneList = [];
@@ -12,10 +12,10 @@ addToList.addEventListener('click', function() {
     if (textField.length>0) {
         toDoList.push(textField);
         makeList('to-do');
-        document.forms[0].reset();
+        document.forms[0].reset(); //Excellent use of form method! -RJH
         console.log('to-do: ' + toDoList);
     } else {
-        alert ('Please enter an item');
+        alert ('Please enter an item'); //Good edge casing. -RJH
     };
 });
 
@@ -44,7 +44,7 @@ function makeList(list_type) {
             editBtn.setAttribute('type', 'button');
             editBtn.setAttribute('style', 'position: absolute; right: 130px; font-family: Playfair Display SC, serif;')
             editBtn.classList.add('btn', 'btn-sm', 'btn-default');
-
+    //Interesting use of setAttribute above. -RJH
             doneBtn.innerText = ('Done');
             doneBtn.setAttribute('type', 'button');
             doneBtn.setAttribute('style', 'position: absolute; right: 70px; font-family: Playfair Display SC, serif;');
@@ -79,7 +79,7 @@ function moveToDone(i) {
     console.log('done: ' + doneList);
 };
 
-var timer
+var timer //Is this an accidental enter and you menat to set timer to the delayDoneList() fn or did you just forget the semicolon after a declaration? -RJH
 function delayDoneList() {
     timer = setTimeout(moveToDone, 2000);
 };
